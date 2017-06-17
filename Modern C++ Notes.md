@@ -15,7 +15,23 @@
     for(const auto& e: r) f(e);
     for(auto& e: r) e = f(e);
     ```
-  * Use own-implmentation of routines using `STL` functions
+  * Keep the body of the loops short. If the body is more than few lines, name the block as a function.
+  * Use lambdas for preducates, comparisons and projectsion, but keep them short
+  If lambdas get longer, use a function and give it a name.
+  * Use function objects with template member function to simulate `polymorphic lambda`
+  
+* No Raw Pointers (includes unique_ptr and shared_ptr)
+  * Using make_shared<> to create shared_ptrs eliminates an extra heap allocation
+  * pass `sink` arguments by value and move into place
+  
+* Less/No raw synchronization primities i.e. `mutexes, atomic, semaphore, memory fences`
+  * Tasks can be scheduled in thread pools. Look up `std::async`
+
+
+### General Guidelines
+
+### Other Guidelines
+* Use own-implmentation of routines using `STL` functions
     * slide
     ```c++
     template <typename It> 
@@ -59,5 +75,3 @@
     }
     ```
 
-### General Guidelines
-* 
