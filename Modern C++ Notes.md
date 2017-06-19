@@ -44,7 +44,7 @@
 * Use  `<random>`
   * `uniform_int_distribution`
   * `uniform_real_distribution`
-  * `mt19937` is extremely fast, high-quality, seedable, reproducible(in another platform), but not cryptographically secure
+  * `mt19937` \ `mt19937_64` is extremely fast, high-quality, seedable, reproducible(in another platform), but not cryptographically secure
   * `uniform_int_distribution` preserves perfect uniformity of the underlying generator. It is determinitstic, but not invariant.
   * deterministic
   ```c++
@@ -68,8 +68,10 @@
     ```
   * Multiple threads **cannot** simultaneously call the URNG.
   * `uniform_int_distribution` can be skipped if the target range is power of 2. e.g. [0, 2^17]. The LSB output of the random generator can be masked for use.
+#### Chrono
 #### Pointers  
 * Don't use `NULL`. Use `null_ptr`
+#### Inline namespaces
 
 ### General Guidelines
 
